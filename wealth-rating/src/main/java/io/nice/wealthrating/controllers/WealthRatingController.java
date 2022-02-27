@@ -21,9 +21,12 @@ import io.nice.wealthrating.services.WealthRatingService;
 @RequestMapping("/wealthRating")
 public class WealthRatingController {
 	
-	@Autowired
 	private WealthRatingService wealthRatingService;
 	
+	@Autowired
+	public WealthRatingController(WealthRatingService wealthRatingService) {
+		this. wealthRatingService = wealthRatingService; 
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<RichPerson>> getAllRichPersons() {
